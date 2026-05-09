@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "meowbot"
+version = "0.1.0"
+description = "A minimal nanobot-style CLI scaffold."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "typer>=0.12",
+  "pydantic>=2.7",
+  "pydantic-settings>=2.2",
+  "loguru>=0.7",
+]
+
+[project.scripts]
+meowbot = "meowbot.cli.commands:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["meowbot"]
